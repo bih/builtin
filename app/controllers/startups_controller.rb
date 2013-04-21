@@ -111,7 +111,7 @@ class StartupsController < ApplicationController
   # Show Startup
   def show
   	@listing = Listing.where(:active => true, :slug => params[:slug]).first
-  	@title = @listing.name.nil? ? "" : @listing.name
+  	@title = @listing.inspect
     @opengraph = @listing.json
 
     respond_to do |format|
