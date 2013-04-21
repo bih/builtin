@@ -142,7 +142,7 @@ class Listing < ActiveRecord::Base
   	  	results = []
 
   	  	tags.each do |tag|
-  	  		_tags = Tag.where(:name => tag).where("`tags`.`listing` != ?", self.id).all
+  	  		_tags = Tag.where(:name => tag.name).where("`tags`.`listing` != ?", self.id).all
   	  		next if _tags.count
 
   	  		_tags.each do |_tag|
