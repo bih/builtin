@@ -38,7 +38,7 @@ $(document).ready ->
 					$("<br>").appendTo(info)
 
 					for tag in res.startup.tags
-						$("<tag>").html($("<a>").attr('href', tag.url).text(tag.name)).append(" ").appendTo(info)
+						$("<tag>").html($("<a>").attr('href', tag.url).text(tag.name)).append("&nbsp;").appendTo(info)
 
 
 					info.appendTo(entry)

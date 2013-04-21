@@ -12,13 +12,35 @@
     / General Information
     %meta{ :charset => "utf-8" }
     %meta{ 'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1' }
-    %meta{ :name => "description", :content => "Built in Manchester is a collection of the awesome startups - both established and upcoming - all of which are proudly based in Manchester, UK." }
+    %meta{ :name => "description", :content => "Built in Manchester is a collection of awesome startups - both established and upcoming - all of which are proudly based in Manchester, UK." }
     %meta{ :name => "tags", :content => "manchester startups, based in manchester, technology startups, uk startups, british startups, north west startups" }
 
     / Social media goodness
-    %meta{ :property => "og:site_name", :content => "Built in Manchester" }
-    %meta{ :property => "og:image", :content => "http://builtinmcr.com/assets/logo@2x.png" }
-    %meta{ :property => "og:url", :content => "http://builtinmcr.com" }
+    - if @opengraph.nil? then
+      %meta{ :property => "og:site_name", :content => "Built in Manchester" }
+      %meta{ :property => "og:title", :content => "Built in Manchester: A collection of Manchester's technology startups" }
+      %meta{ :property => "og:type", :content => "website" }
+      %meta{ :property => "og:description", :content => "Built in Manchester is a collection of awesome startups - both established and upcoming - all of which are proudly based in Manchester, UK." }
+      %meta{ :property => "og:image", :content => "http://builtinmcr.com/assets/logo@2x.png" }
+      %meta{ :property => "og:url", :content => "http://builtinmcr.com" }
+    - else
+
+      -# %meta{ :property => "place:location:latitude", :content => "" }
+      -# %meta{ :property => "place:location:longitude", :content => "" }
+
+      %meta{ :property => "og:site_name", :content => "Built in Manchester" }
+      %meta{ :property => "og:title", :content => @opengraph[:startup][:name] }
+      %meta{ :property => "og:url", :content => @opengraph[:startup][:url] }
+      %meta{ :property => "og:description", :content => @opengraph[:startup][:description] }
+      %meta{ :property => "og:image", :content => @opengraph[:startup][:logo] }
+      %meta{ :property => "og:type", :content => "article" }
+      %meta{ :property => "og:article:tag", :content => @opengraph[:startup][:tags][0][:name] }
+      %meta{ :property => "og:article:published_time", :content => @opengraph[:when][:listed] }
+      %meta{ :property => "og:article:modified_time", :content => @opengraph[:when][:updated] }
+      %meta{ :property => "og:locale", :content => "en_GB" }
+
+      %meta{ :property => "fb:admins", :content => "555155596" }
+      
 
     / Mobile-friendly tags - Taken from http://html5boilerplate.com/
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1" }

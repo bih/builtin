@@ -112,6 +112,7 @@ class StartupsController < ApplicationController
   def show
   	@listing = Listing.where(:active => true, :slug => params[:slug]).first
   	@title = @listing.name
+    @opengraph = @listing.json
 
     respond_to do |format|
       format.html
