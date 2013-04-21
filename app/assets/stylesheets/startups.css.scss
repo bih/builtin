@@ -1,0 +1,262 @@
+// Place all the styles related to the startups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-family: 'Divulge', 'HelveticaNeue-Light', 'Helvetica Neue', 'Arial', 'Verdana', 'Times New Roman', 'sans-serif';
+$font-family-alt: 'Proxima Nova', 'HelveticaNeue-Light', 'Helvetica Neue', 'Arial', 'Verdana', 'Times New Roman', 'sans-serif';
+
+.startups {
+	padding-top: 20px;
+
+	&.results {
+		&.disabled { display: none; }
+	}
+}
+
+.startups .startup {
+	border: 1px dotted #00c5b4;
+	margin: 0 30px 30px 0;
+	padding: 10px;
+	width: 227px;
+	max-height: 250px;
+	float: left;
+	position: relative;
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	text-align: center;
+
+	img { max-width: 200px; max-height: 108px; }
+
+	&:hover, &.hover {
+		cursor: pointer;
+		border: 1px solid #00c5b4;
+
+		.information {
+			display: block;
+		}
+
+		// .hiring:after {
+		//	background: #fff;
+		// 	color: #00c5b4;
+		// }
+	}
+
+	.hiring {
+		position: absolute;
+		top: 12px;
+		right: -25px;
+		z-index: 10;
+		transform: rotate(-40deg);
+		-o-transform: rotate(-40deg);
+		-webkit-transform: rotate(40deg);
+		width: 100px;
+
+		&:after {
+			content: "Hiring"; 
+			font-family: $font-family; 
+			font-size: 13px;
+			text-align: center;
+			text-transform: uppercase;
+			display: block;
+			color: #FFF;
+			background: #999;
+		}
+	}
+
+	.information {
+		display: none;
+		position: absolute; 
+		background: #00c5b4; 
+		top: 0; 
+		left: 0; 
+		width: 100%; 
+		height: 100%;
+		text-align: center;
+
+		h3 {
+			padding: 25px 2px 0;
+			margin-bottom: 15px;
+			display: inline-block;
+			font-family: $font-family;
+			font-weight: 400;
+			font-size: 20px;
+			text-transform: uppercase;
+			text-align: center;
+
+			a { text-decoration: none; }
+		}
+
+		tag {
+			display: inline-block;
+			padding: 0 5px;
+			font-family: $font-family;
+			font-size: 13px;
+			background: #fff;
+			background: rgba(255, 255, 255, .5);
+
+			a {
+				color: #000;
+				text-decoration: none;
+
+				&:hover { text-decoration: underline; }
+			}
+
+			a:before {
+				content: "#";
+			}
+		}
+	}
+}
+
+.startups.related {}
+
+h5.related-startups {
+	font-family: $font-family;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 15px;
+}
+
+.listing-wrapper {
+	overflow:auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.im-hiring {
+	position: absolute;
+	top: 40px;
+	right: -80px;
+	z-index: 10;
+	transform: rotate(-40deg);
+	-o-transform: rotate(-40deg);
+	-webkit-transform: rotate(40deg);
+	min-width: 300px;
+	text-decoration: none;
+
+	&:after {
+		content: "Hiring"; 
+		font-family: $font-family; 
+		font-size: 24px;
+		padding: 10px 10px;
+		text-align: center;
+		text-transform: uppercase;
+		display: block;
+		color: #fff;
+		background: #999;
+	}
+}
+
+header.listing {
+	padding: 0;
+
+	/* h2 {
+		display: inline-block;
+		//padding-top: 8px;
+		padding-left: 10px;
+		font-size: 26px;
+		line-height: 30px;
+		//float: right;
+
+		a {
+			color: #999;
+			text-decoration: none;
+		}
+	} */
+
+	h4 {
+		font-size: 17px;
+		line-height: 28px;
+		padding: 10px 0 10px;
+	}
+}
+
+header.listing .logo {
+	background: #fff;
+	display: block;
+	max-width: 250px;
+	padding: 10px;
+	margin-bottom: 40px;
+	border: 1px dotted #00c5b4;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+div.listing {
+
+	padding: 10px 0;
+	font-family: $font-family-alt;
+	font-size: 19px;
+	line-height: 30px;
+
+	div {
+		padding-bottom: 5px;
+	}
+
+	.external {
+		background: url(asset-external-link.png) no-repeat 0 3px;
+		background-size: 16px 16px;
+		padding-left: 25px;
+		font-size: 16px;
+		line-height: 24px;
+
+		a { text-decoration: none; }
+	}
+
+	.twitter {
+		background: url(asset-twitter.png) no-repeat 0 3px;
+		background-size: 16px 16px;
+		padding-left: 25px;
+		font-size: 16px;
+		line-height: 24px;
+
+		a {
+			text-decoration: none;
+
+			&:before { content: "@"; }
+		}
+	}
+
+	.founders, .founder {
+		background: url(asset-person.png) no-repeat 0 3px;
+		background-size: 16px 16px;
+		padding-left: 25px;
+		font-size: 16px;
+		color: #333;
+		line-height: 24px;
+	}
+
+	.founder {
+		background: transparent;
+		
+		&:before { content: "- "; }
+	}
+
+	.tags {
+		background: url(asset-tag.png) no-repeat 0 3px;
+		background-size: 16px 16px;
+		padding-left: 25px;
+		font-size: 16px;
+		line-height: 24px;
+
+		a {
+			text-decoration: none;
+			padding-right: 5px;
+
+			&:before { content: "#"; }
+		}
+	}
+
+	.address {
+		background: url(asset-map.png) no-repeat 0 5px;
+		background-size: 16px 16px;
+		padding-left: 25px;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+}

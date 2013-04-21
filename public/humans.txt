@@ -1,0 +1,13 @@
+/* TEAM */
+	Developer: Bilawal Hameed
+	Contact: b [at] bilawal.co.uk
+	Twitter: @bilawalhameed
+	From: Manchester, UK
+
+/* SITE */
+	Launched: 2013/04/19
+	Language: English
+	Doctype: HTML5
+	IDE: Sublime Text 2
+	Language: Ruby
+	Framework: Ruby on Rails

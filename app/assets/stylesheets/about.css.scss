@@ -1,0 +1,27 @@
+$font-family: 'Divulge', 'HelveticaNeue-Light', 'Helvetica Neue', 'Arial', 'Verdana', 'Times New Roman', 'sans-serif';
+$font-family-alt: 'Proxima Nova', 'HelveticaNeue-Light', 'Helvetica Neue', 'Arial', 'Verdana', 'Times New Roman', 'sans-serif';
+
+.about {
+	padding: 10px 0 0;
+}
+
+.questions {
+
+	.odd, .even {
+		padding: 8px 0 8px 0px;
+	}
+
+	.question {
+		font-size: 17px;
+		line-height: 25px;
+		font-weight: 800;
+		color: #000;
+	}
+
+	.answer {
+		font-size: 15px;
+		line-height: 25px;
+		color: #333;
+		padding-bottom: 5px;
+	}
+}

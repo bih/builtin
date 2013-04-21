@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @listing.name
+%p
+  %b Description:
+  = @listing.description
+%p
+  %b Logo:
+  = @listing.logo
+%p
+  %b Twitter:
+  = @listing.twitter
+%p
+  %b Address:
+  = @listing.address
+%p
+  %b Employees:
+  = @listing.employees
+%p
+  %b Founders:
+  = @listing.founders
+%p
+  %b Active:
+  = @listing.active
+%p
+  %b Hiring:
+  = @listing.hiring
+%p
+  %b Hiringurl:
+  = @listing.hiringurl
+%p
+  %b Listername:
+  = @listing.listername
+%p
+  %b Listeremail:
+  = @listing.listeremail
+
+= link_to 'Edit', edit_listing_path(@listing)
+\|
+= link_to 'Back', listings_path

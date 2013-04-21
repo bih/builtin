@@ -1,0 +1,50 @@
+%header
+  %h1 Admin Panel
+  %br
+  %br
+
+%table.admin
+  %tr
+    %th{ :width => 600 } Name
+    %th{ :width => 75 } Active
+    %th{ :width => 75 } Hiring
+    %th{ :width => 75 } Featured
+    %th{ :width => 150 } Lister
+    %th{ :width => 200 }
+
+  - @listings.each do |listing|
+    %tr
+      %td
+        %span.image
+          %img{ :src => listing.logo }
+        %span.info
+          %h4= listing.name
+          %p= listing.description
+      %td
+        - if listing.active then
+          %span.yes
+        - else
+          %span.no
+      %td
+        - if listing.hiring then
+          %span.yes
+        - else
+          %span.no
+      %td
+        - if listing.featured then
+          %span.yes
+        - else
+          %span.no
+      %td
+        %h5= listing.listername
+        %h5= link_to listing.listeremail, "mailto:" + listing.listeremail
+      %td{ :align => "center" }
+        %h5
+          - if listing.active then
+            = link_to 'View Listing', listing.json[:startup][:url]
+            %br
+
+          = link_to 'Edit Listing', edit_admin_path(listing)
+          %br
+          = link_to 'Destroy Listing', admin_path(listing), :method => :delete, :data => { :confirm => 'Are you sure?' }
+

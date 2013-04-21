@@ -1,0 +1,30 @@
+%header
+	%h1
+		Search: 
+		%span.search{ :contenteditable => "true" }= params[:q].to_s
+
+.about
+
+	.progress-icon.disabled
+
+	.startups.results
+
+		- if @listings.size == 0 and params[:q].nil? then
+			%p Please enter a search term above.
+		- elsif @listings.size == 0 then
+			%p Sorry, no results found.
+		- else
+			- @listings.each do |listing|
+				.startup.ontouch{ 'data-url' => by_slug_path(listing.slug) }
+					%img{ :src => listing.logo }
+
+					- if listing.hiring and not listing.hiringurl.empty? then
+						%span{ :class => "hiring"}
+
+					.information
+						%h3= link_to listing.name, by_slug_path(listing.slug)
+
+						%br
+						
+						- listing.tags.each do |tag|
+							%tag= link_to tag.name, by_tag_path(tag.name)

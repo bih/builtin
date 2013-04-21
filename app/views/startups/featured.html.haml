@@ -1,0 +1,23 @@
+%header
+	%h1 Hai!
+
+.about
+	%h4
+		%strong Built in Manchester
+		is a collection of Manchester's finest and upcoming technology startups.
+
+	.startups
+		- @listings.each do |listing|
+			.startup.ontouch{ 'data-url' => by_slug_path(listing.slug) }
+				%img{ :src => listing.logo }
+
+				- if listing.hiring and not listing.hiringurl.empty? then
+					%span{ :class => "hiring"}
+
+				.information
+					%h3= link_to listing.name, by_slug_path(listing.slug)
+
+					%br
+					
+					- listing.tags.each do |tag|
+						%tag= link_to tag.name, by_tag_path(tag.name)

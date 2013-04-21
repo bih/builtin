@@ -1,0 +1,110 @@
+%header
+	%h1 Apply Your Startup
+
+%div.content
+	%p
+		Did you know? It is 
+		%strong free 
+		(and free forever) to list your startup with us.
+
+	= form_for @listing, :html => { :multipart => true, :accept => "image/gif,image/png,image/jpg" } do |f|
+		- if @listing.errors.any?
+			#error_explanation
+				%h2= "#{pluralize(@listing.errors.count, "error")} prohibited this listing from being saved:"
+				%ul
+					- @listing.errors.full_messages.each do |msg|
+						%li= msg
+
+		/ Lister Information
+		.three.columns.content.form-label
+			%span= f.label :listername, "Your Name"
+		.nine.columns.content.form-field
+			= f.text_field :listername, :required => true
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :listeremail, "Your Email Address"
+		.nine.columns.content.form-field
+			= f.text_field :listeremail, :required => true
+
+		.clear
+
+		/ Startup Information
+		.three.columns.content.form-label
+			%span= f.label :name, "Startup Name"
+		.nine.columns.content.form-field
+			= f.text_field :name, :required => true
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :url, "Startup URL"
+		.nine.columns.content.form-field
+			= f.text_field :url, :placeholder => "http://", :required => true
+
+		.clear
+
+		.three.columns.content.form-label
+			%span
+				= f.label :logo, "Startup Logo"
+				%attr (Must be 520x280 pixels)
+		.nine.columns.content.form-field
+			= f.file_field :logo
+
+		.clear
+
+		.three.columns.content.form-label
+			%span
+				= f.label :description, "Startup Description"
+				%attr (250 chars max)
+		.nine.columns.content.form-field
+			= f.text_area :description, :required => true
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :twitter, "Startup Twitter Handle"
+		.nine.columns.content.form-field
+			= f.text_field :twitter, :placeholder => "@"
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :address, "Startup Address"
+		.nine.columns.content.form-field
+			= f.text_area :address, :placeholder => "123 Bonhill Street, New Street, Manchester, M1 1BC"
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :founders, "Startup Founders"
+		.nine.columns.content.form-field
+			= f.text_field :founders, :placeholder => "John Smith, John Doe"
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :employeees, "Startup Employees"
+		.nine.columns.content.form-field
+			= f.select(:employees, [["Please Select"], ["1 employee"], ["2-9 employees"], ["10-49 employees"], ["50-99 employees"], ["100-249 employees"], ["250+ employees"] ])
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :hiring, "Are you hiring?"
+		.nine.columns.content.form-field
+			= f.check_box :hiring
+			Yes
+
+		.clear
+
+		.three.columns.content.form-label
+			%span= f.label :hiringurl, "Hiring URL"
+		.nine.columns.content.form-field
+			= f.text_field :hiringurl
+
+		.clear
+
+		.three.columns.content.form-submit
+			= f.submit 'Submit My Startup'

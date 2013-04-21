@@ -1,0 +1,55 @@
+.eight.columns.content.relative.listing-wrapper
+
+    %header.listing
+        .logo
+            %img{ :src => @listing.logo }
+        %h1= @listing.name
+        %h4= @listing.description
+
+    .listing
+        .four.columns.content.relative
+            - unless @listing.url.empty? then
+                .external= link_to @listing.host, @listing.url, :target => "_blank"
+            
+            - unless @listing.twitter.empty? then
+                .twitter= link_to @listing.twitter[1..-1], "http://twitter.com/#{@listing.twitter[1..-1]}", :target => "_blank"
+            
+            - unless @listing.tags.nil? then
+                .tags
+                    - @listing.tags.each do |tag|
+                        = link_to tag.name, by_tag_path(tag.name)
+
+        .three.columns.content.relative
+            - unless @listing.employees.empty? then
+                .founders= @listing.employees
+
+            - unless @listing.founders.empty? then
+                .founders= "Founders: " + @listing.founders
+
+            - unless @listing.address.empty? and not @listing.address.to_s.eql?("N/A") then
+                .address= @listing.address
+
+        / Hiring?
+        - if @listing.hiring and not @listing.hiringurl.empty? then
+            = link_to "", @listing.hiringurl, :class => "im-hiring", :target => "_blank"
+
+.three.columns.offset-by-one.content.relative.infinite
+    
+    - if @listing.related.size > 0 then
+
+        %h5{ :class => "related-startups" } Related Manchester Startups
+
+        .startups.related
+
+            - @listing.related.each do |related|
+                .startup.ontouch{ 'data-url' => by_slug_path(related.slug) }
+                    %img{ :src => related.logo }
+
+                    - if related.hiring and not related.hiringurl.nil? then
+                        %span{ :class => "hiring" }
+                    
+                    .information
+                        %h3= link_to related.name, by_slug_path(related.slug)
+                        %br
+                        - related.tags.each do |tag|
+                            %tag= link_to tag.name, by_tag_path(tag.name)

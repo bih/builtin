@@ -1,0 +1,18 @@
+
+
+
+Name
+Description
+Website URL
+Logo URL
+Twitter Handle
+Address
+Employees
+Founders
+Active
+Hiring
+Hiring URL
+Lister Name
+Lister Email
+
+rails g scaffold listing name:string description:string logo:string twitter:string address:text employees:string founders:text active:boolean hiring:boolean hiringurl:string listername:string listeremail:string
