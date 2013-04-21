@@ -1,0 +1,7 @@
+www:
+  type: ruby
+  config:
+    ruby-version: 1.9.3
+
+db:
+  type: mysql

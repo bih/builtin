@@ -36,7 +36,7 @@ Builtinmcr::Application.configure do
   config.assets.debug = true
 
   AWS::S3::Base.establish_connection!(
-    :access_key_id => "AKIAJK3MUA2ZI2UP4T2A",
-    :secret_access_key => "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"
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET']
   )
 end
