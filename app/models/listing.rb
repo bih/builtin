@@ -164,7 +164,7 @@ class Listing < ActiveRecord::Base
   	  		:startup => {
   	  			:id => self.id,
   	  			:name => self.name,
-  	  			:url => "http://builtinmcr.com/#{self.slug}",
+  	  			:url => "http://www.builtinmcr.com/#{self.slug}",
   	  			:logo => self.logo,
   	  			:address => self.address.split(/\r?\n/).map{ |e| e[0..-2] },
   	  			:raw_address => self.address,

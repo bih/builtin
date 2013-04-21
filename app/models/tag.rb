@@ -19,7 +19,7 @@ class Tag < ActiveRecord::Base
 
       {
         :id => self.id,
-        :url => "http://builtinmcr.com/tag/#{self.name}",
+        :url => "http://www.builtinmcr.com/tag/#{self.name}",
         :name => self.name
       }
     end

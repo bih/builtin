@@ -15,7 +15,7 @@ $(document).ready ->
 	)(this)
 
 	if $("header h1 span.search").length
-		$("header h1 span.search").focus().keypress ->
+		$("header h1 span.search").focus().bind 'keyup keydown', ->
 
 			#$(".progress-icon.disabled").removeClass 'disabled'
 			$(".startups.results").empty()#.addClass 'disabled'
@@ -29,6 +29,8 @@ $(document).ready ->
 					$(".startups.results").html("<p>Sorry, no results found.</p>")
 					return false
 
+				$(".startups.results").empty()
+
 				for res in out.results
 					entry = $("<div />").addClass('startup').addClass('ontouch').data('url', res.startup.url)
 					$("<img />").attr('src', res.startup.logo).appendTo(entry)
@@ -38,7 +40,7 @@ $(document).ready ->
 					$("<br>").appendTo(info)
 
 					for tag in res.startup.tags
-						$("<tag>").html($("<a>").attr('href', tag.url).text(tag.name)).append("&nbsp;").appendTo(info)
+						$("<tag>").html($("<a>").attr('href', tag.url).text(tag.name)).after("&nbsp;&nbsp;").appendTo(info)
 
 
 					info.appendTo(entry)
