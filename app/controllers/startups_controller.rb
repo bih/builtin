@@ -106,12 +106,14 @@ class StartupsController < ApplicationController
     else
       render "startups/apply"
     end
+
+    return
   end
 
   # Show Startup
   def show
   	@listing = Listing.where(:active => true, :slug => params[:slug]).first
-  	@title = @listing.inspect
+  	@title = @listing.name
     @opengraph = @listing.json
 
     respond_to do |format|
