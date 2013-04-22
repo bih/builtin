@@ -29,7 +29,7 @@
       -# %meta{ :property => "place:location:longitude", :content => "" }
 
       %meta{ :property => "og:site_name", :content => "Built in Manchester" }
-      %meta{ :property => "og:title", :content => @opengraph[:startup][:name] }
+      %meta{ :property => "og:title", :content => @opengraph[:startup][:name].to_s + " - Built in Manchester" }
       %meta{ :property => "og:url", :content => @opengraph[:startup][:url] }
       %meta{ :property => "og:description", :content => @opengraph[:startup][:description] }
       %meta{ :property => "og:image", :content => @opengraph[:startup][:logo] }
