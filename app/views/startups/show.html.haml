@@ -19,6 +19,13 @@
                     - @listing.tags.each do |tag|
                         = link_to tag.name, by_tag_path(tag.name)
 
+            .twitter-share
+                Share: 
+                = link_to "Twitter", "http://twitter.com/intent/tweet?text=#{URI::encode("Built in Manchester - " + @listing.name)}&url=#{URI::encode(@listing.json[:startup][:url])}&hashtags=builtinmcr,#{@listing.comma_tags.gsub(' ', '')}", :target => "_blank"
+                = " "
+                = link_to "Facebook", "https://www.facebook.com/sharer/sharer.php?u=#{@listing.json[:startup][:url]}"
+                
+
         .three.columns.content.relative
             - unless @listing.employees.empty? then
                 .founders= @listing.employees
@@ -27,7 +34,7 @@
                 .founders= "Founders: " + @listing.founders
 
             - unless @listing.address.empty? and not @listing.address.to_s.eql?("N/A") then
-                .address= @listing.address
+                .address= link_to @listing.address, "http://maps.google.com/maps?q=" + URI::encode(@listing.address), :target => "_blank"
 
         / Hiring?
         - if @listing.hiring and not @listing.hiringurl.empty? then

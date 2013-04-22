@@ -221,6 +221,21 @@ div.listing {
 		}
 	}
 
+	.twitter-share {
+		background: url(asset-twitter.png) no-repeat 0 3px;
+		background-size: 16px 16px;
+		padding-left: 25px;
+		font-size: 16px;
+		line-height: 24px;
+
+		a {
+			text-decoration: none;
+			color: #fff;
+			background: #00c5b4;
+			padding: 0 3px;
+		}
+	}
+
 	.founders, .founder {
 		background: url(asset-person.png) no-repeat 0 3px;
 		background-size: 16px 16px;
@@ -257,6 +272,10 @@ div.listing {
 		padding-left: 25px;
 		font-size: 16px;
 		line-height: 24px;
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 }
