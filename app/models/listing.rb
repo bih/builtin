@@ -146,7 +146,8 @@ class Listing < ActiveRecord::Base
   	  		next if _tags.count == 0
 
   	  		_tags.each do |_tag|
-  	  			results.push(Listing.find(_tag.listing))
+            list = Listing.find(_tag.listing)
+  	  			results.push(list) unless results.include?(list)
   	  		end
   	  	end
 
