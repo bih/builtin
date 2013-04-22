@@ -143,7 +143,7 @@ class Listing < ActiveRecord::Base
 
   	  	tags.each do |tag|
   	  		_tags = Tag.where(:name => tag.name).where("`tags`.`listing` != ?", self.id).all
-  	  		next if _tags.count
+  	  		next if _tags.count == 0
 
   	  		_tags.each do |_tag|
   	  			results.push(Listing.find(_tag.listing))
