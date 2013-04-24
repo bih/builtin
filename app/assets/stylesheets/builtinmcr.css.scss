@@ -157,6 +157,8 @@ header h1 {
 		display: inline-block;
 		min-width: 40px;
 		text-shadow: 0 1px #999;
+		white-space: wrap;
+  		overflow: hidden;
 	}
 }
 

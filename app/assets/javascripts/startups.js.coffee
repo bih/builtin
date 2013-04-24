@@ -15,7 +15,11 @@ $(document).ready ->
 	)(this)
 
 	if $("header h1 span.search").length
-		$("header h1 span.search").focus().bind 'keyup keydown', ->
+		$("header h1 span.search").focus().bind 'keyup keydown', (e) ->
+			
+			if e.which == 13
+				_text = $(this).text().replace(/[\r\n]/g, ' ')
+				$(this).text(_text)
 
 			#$(".progress-icon.disabled").removeClass 'disabled'
 			$(".startups.results").empty()#.addClass 'disabled'
@@ -40,7 +44,8 @@ $(document).ready ->
 					$("<br>").appendTo(info)
 
 					for tag in res.startup.tags
-						$("<tag>").html($("<a>").attr('href', tag.url).text(tag.name)).after("&nbsp;&nbsp;").appendTo(info)
+						$("<tag>").html($("<a>").attr('href', tag.url).text(tag.name)).appendTo(info)
+						info.append("&nbsp;");
 
 
 					info.appendTo(entry)
