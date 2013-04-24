@@ -1,4 +1,4 @@
-.eight.columns.content.relative.listing-wrapper
+.twelve.columns.content.relative.listing-wrapper
 
     %header.listing
         .logo
@@ -7,7 +7,7 @@
         %h4= @listing.description
 
     .listing
-        .four.columns.content.relative
+        .eight.columns.content.relative
             - unless @listing.url.empty? then
                 .external= link_to @listing.host, @listing.url, :target => "_blank"
             
@@ -40,7 +40,15 @@
         - if @listing.hiring and not @listing.hiringurl.empty? then
             = link_to "", @listing.hiringurl, :class => "im-hiring", :target => "_blank"
 
-.three.columns.offset-by-one.content.relative.infinite
+.clear
+
+%br
+%br
+%br
+%br
+
+.twelve.columns.content.relative.infinite
+
     
     - if @listing.related.size > 0 then
 
