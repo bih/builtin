@@ -32,9 +32,9 @@ Now you're all setup. Just prepend those keys to any Rails-like commands (i.e. `
 $ S3_KEY="" S3_SECRET="" ADMIN_USERNAME="test" ADMIN_PASSWORD="test" bundle exec rails server
 ```
 ### Post-installation
-Once you have completed the installation above, you're ready to go live. The admin panel for your website can be found at [`http://localhost:3000/admin`](http://localhost:3000/admin) once you run the `rails server` command.
+Once you have completed the installation above, you're ready to go live. The admin panel for your website can be found at [http://localhost:3000/admin](http://localhost:3000/admin) once you run the `rails server` command.
 
 If you'd like to add startups manually, you will need to submit and approve it through the admin panel manually. I won't go through the admin panel as I have designed it to be intuitive. You're free to open a issue through GitHub if you're having problems.
 
 ### Contributing
-I would love to see **Built in** grow into a fantastic piece of software to replicate the beauty of [Built in London](http://www.builtinlondon.co) for many cities worldwide. It is purely down to the community to help this software become better through [forking and making a pull request](https://help.github.com/articles/using-pull-requests).
+I would love to see **Built in** grow into a fantastic piece of software to replicate the beauty of [Built in London](http://www.builtinlondon.co) for many cities worldwide. It is purely down to developers like yourselves to help this software become better through [forking and making a pull request](https://help.github.com/articles/using-pull-requests).
