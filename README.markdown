@@ -1,7 +1,7 @@
 ![Built in Manchester](http://i.imgur.com/qxeqjiF.png)
 
-## Roll out your own "Built in" for your own city
-After being inspired by [Built in London](http://www.builtinlondon.co) to design a website to showcase great local companies, I decided to create a version for Manchester - it's called [Built in Manchester](http://builtinmcr.com). Now I've decided to open source the engine behind it (called the **Built in** engine) so you can roll one out for your own city.
+## Roll out a "Built in" for your own city
+After being inspired by [Built in London](http://www.builtinlondon.co) to design a website to showcase great local companies, I wanted to create a version for [Manchester](http://www.manchester.gov.uk) - it's called [Built in Manchester](http://builtinmcr.com). Now I have open sourced the engine behind it (aka **Built in** engine) so you can quickly roll one for your own city in a few minutes.
 
 ### Getting started
 The software is designed using [Ruby on Rails](http://rubyonrails.org) with [MySQL](http://www.mysql.com) as a database. You'll need Ruby (preferably 1.9.3), Ruby on Rails (preferably 3.2), [Bundler](http://gembundler.com), MySQL and an [Amazon Web Services](http://aws.amazon.com) account (it uses S3 for image hosting).
@@ -13,7 +13,10 @@ First of all, download this repository and navigate to the `builtin` folder.
 $ git clone git://github.com/bih/builtin.git
 ```
 
-Second, edit the `/config/database.yml` with your MySQL database information.
+Second, edit the Rails database file with your MySQL database information.
+```
+/config/database.yml
+```
 
 Thirdly, you'll need to download all dependencies using [Bundler](http://gembundler.com).
 ```
@@ -37,4 +40,4 @@ Once you have completed the installation above, you're ready to go live. The adm
 If you'd like to add startups manually, you will need to submit and approve it through the admin panel manually. I won't go through the admin panel as I have designed it to be intuitive. You're free to open a issue through GitHub if you're having problems.
 
 ### Contributing
-I would love to see **Built in** grow into a fantastic piece of software to replicate the beauty of [Built in London](http://www.builtinlondon.co) for many cities worldwide. It is purely down to developers like yourselves to help this software become better through [forking and making a pull request](https://help.github.com/articles/using-pull-requests).
+I would love to see **Built in** used to showcase many exciting startups across many cities worldwide. As a small weekend hack, I know the software has plenty of room for improvement and I would happily accept any pull requests.
