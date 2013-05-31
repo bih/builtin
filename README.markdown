@@ -1,7 +1,7 @@
-![Built in Manchester](http://i.imgur.com/qxeqjiF.png)
+![Built in Manchester](http://i.imgur.com/NBmkB8j.png)
 
 ## Roll out a "Built in" for your own city
-After being inspired by [Built in London](http://www.builtinlondon.co) to design a website to showcase great local companies, I wanted to create a version for [Manchester](http://www.manchester.gov.uk) - it's called [Built in Manchester](http://builtinmcr.com). Now I have open sourced the engine behind it (aka **Built in** engine) so you can quickly roll one for your own city in a few minutes.
+After being inspired by [Built in London](http://www.builtinlondon.co) to design a website to showcase great local companies, I wanted to create a version for Manchester - it's called [Built in Manchester](http://builtinmcr.com). Now I have open sourced the engine behind it (aka **Built in** engine) so you can quickly roll one for your own city in a few minutes.
 
 ### Getting started
 The software is designed using [Ruby on Rails](http://rubyonrails.org) with [MySQL](http://www.mysql.com) as a database. You'll need Ruby (preferably 1.9.3), Ruby on Rails (preferably 3.2), [Bundler](http://gembundler.com), MySQL and an [Amazon Web Services](http://aws.amazon.com) account (it uses S3 for image hosting).
