@@ -1,8 +1,8 @@
 class AdminController < ApplicationController
   before_filter :authenticate
 
-  @@username = "builtinmcr"
-  @@password = "bilaw.al"
+  @@username = ENV['ADMIN_USERNAME']
+  @@password = ENV['ADMIN_PASSWORD']
 
   # GET /listings
   # GET /listings.json
